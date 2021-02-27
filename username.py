@@ -26,7 +26,7 @@ def entry_check(str1,li):
             else:
                 li.append(str1)
 while True:
-    list_user=['vicksvaporub123','Linx','Ujwal','Vishakha']
+    list_user=['vicksvaporub123','Linx1234','Ujwal873','Vishakha']
     print("Enter choice:")
     ch=int(input("1 for manual username entry, 2 for username generator, 3 for password generator and 0 for exit:"))
     if ch==0:
