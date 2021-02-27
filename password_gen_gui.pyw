@@ -6,13 +6,13 @@ import random
 ######################################################################################################################################################################
 #initializing basic window
 root = tkinter.Tk()
-root.geometry('600x600')
+root.geometry('300x250')
 root.resizable(0,0)
 root.title('Password and Username Generator')
-titl = tkinter.Label(text = 'Password Generator', font = ('Arial',25)).place(x=0,y=0)
+titl = tkinter.Label(text = 'Password Generator', font = ('Arial',25)).grid()
+
+
 ######################################################################################################################################################################
-
-
 #necessary variables and moficication function
 constraints = {'upper':False, 'integer':False, 'special':False}
 passw = ''
@@ -75,27 +75,27 @@ def copy_pass(passw):
 
 ######################################################################################################################################################################
 
-### SETUP FOR OBTAINING PASSWORD LENGHT
-lentext = tkinter.Label(text = 'Password Length').place(x=0,y=50)
+### SETUP FOR OBTAINING PASSWORD LENGTH
+lentext = tkinter.Label(text = 'Password Length').grid()
 pass_len = tkinter.IntVar()
-lent = tkinter.Spinbox(root, from_=8, to_=16, textvariable = pass_len, width = 4).place(x=100,y=50)
+lent = tkinter.Spinbox(root, from_=8, to_=16, textvariable = pass_len, width = 4).grid()
 
 
 
 ### SETUP FOR PASSWORD FORMAT
-uppers =  tkinter.Checkbutton(root, text = 'Include Uppercase', command = uppertoggle).place(x=0,y=75)
-integers = tkinter.Checkbutton(root, text = 'Include Integers', command = inttoggle).place(x=150,y=75)
-special = tkinter.Checkbutton(root, text = "Include Special Characters", command = specialtoggle).place(x=0,y=100)
+uppers =  tkinter.Checkbutton(root, text = 'Include Uppercase', command = uppertoggle).grid()
+integers = tkinter.Checkbutton(root, text = 'Include Integers', command = inttoggle).grid()
+special = tkinter.Checkbutton(root, text = "Include Special Characters", command = specialtoggle).grid()
 
 
 
 #GENERATING BUTTON 
-genbut = tkinter.Button(root, text = 'Generate New Password', command = lambda:passGen(pass_len.get(),constraints)).place(x=0,y=125)
-tkinter.Entry(root,textvariable = pwd).place(x=0,y=175)
+genbut = tkinter.Button(root, text = 'Generate New Password', command = lambda:passGen(pass_len.get(),constraints)).grid()
+tkinter.Entry(root,textvariable = pwd).grid()
 
 
 
-copybut = tkinter.Button(root, text = 'Copy Password', command=lambda:copy_pass(passw)).place(x=0,y=200)
+copybut = tkinter.Button(root, text = 'Copy Password', command=lambda:copy_pass(passw)).grid()
 
 root.mainloop()
 
