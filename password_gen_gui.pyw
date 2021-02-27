@@ -64,7 +64,6 @@ def passGen(length,c):
         else:
             passw+=random.choice(string.ascii_lowercase)
     pwd.set(passw)
-    print(passw,pwd)
 
 
 
