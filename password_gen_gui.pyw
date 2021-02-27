@@ -125,7 +125,6 @@ def usergen1():
     y=random.choice(l2)
     z=random.randint(10,1000)
     usern=x+y+str(z)
-    print(usern)
     user.set(usern)
 
 
